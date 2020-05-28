@@ -13,12 +13,13 @@ router.route('/add').post((request, response) => {
     const ingredients = request.body.ingredients;
     const recipeSteps = request.body.recipeSteps;
     const diet = request.body.diet;
+    const category = request.body.category;
 
-    const newRecipe = new Recipe({name, description, ingredients, recipeSteps});
+    const newRecipe = new Recipe({name, description, ingredients, recipeSteps, category, diet});
 
     newRecipe.save()
         .then(() => response.json('Recipe added!'))
-        .catch(err => res.status(400).json('Error: ' + err));
+        .catch(err => response.status(400).json('Error: ' + err));
 });
 
 // delete by id ja muuta mukavaa tänne lisää, update

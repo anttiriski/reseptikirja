@@ -10,6 +10,8 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
+      marginTop: 20,
+      backgroundColor: "#F5F5F5",
     },
     title: {
       fontSize: 14,
@@ -17,6 +19,9 @@ const useStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
+    button: {
+      marginTop: 30,
+    }
   });
 
 const Recipe = props => {
@@ -44,7 +49,7 @@ const Recipe = props => {
           </CardContent>
 
         <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpen}>
+            <Button variant="outlined" size="small" color="secondary" onClick={handleClickOpen} className={classes.button}>
                 Reseptiin
             </Button>
             <Dialog open={open} onClose={handleClose} fullWidth={true} maxWidth={'lg'}>
