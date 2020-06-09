@@ -102,8 +102,11 @@ class AddRecipe extends React.Component {
                     <MenuItem value={'fish'}>Kalaruuat</MenuItem>
                     <MenuItem value={'cake'}>Kakut</MenuItem>
                     <MenuItem value={'pasta'}>Pastat</MenuItem>
+                    <MenuItem value={'boxfood'}>Laatikkoruuat</MenuItem>
                     <MenuItem value={'cookie'}>Keksit</MenuItem>
                     <MenuItem value={'drink'}>Juomat</MenuItem>
+                    <MenuItem value={'snack'}>Välipala</MenuItem>
+                    <MenuItem value={'other'}>Muut</MenuItem>
                 </Select>
             </FormControl>
             <Typography>Uunin lämpötila</Typography>

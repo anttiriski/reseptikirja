@@ -1,10 +1,55 @@
 import React, {useState} from 'react'
-import { Card, CardActions, CardContent, Button, Typography, Dialog, DialogTitle, DialogContentText, ListItemText } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { Card, CardActions, CardContent, Button, Typography, Dialog, DialogContentText, IconButton } from '@material-ui/core'
+import { makeStyles, withStyles } from '@material-ui/core/styles'
 import List from '@material-ui/core/List';
 import Ingredient from './Ingredient'
 import RecipeStep from './RecipeStep'
 import Divider from '@material-ui/core/Divider';
+import EditIcon from '@material-ui/icons/Edit';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import { Link } from 'react-router-dom';
+
+import DeleteRecipe from './DeleteRecipe'
+
+const styles = (theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(2),
+    display: "flex",
+    alignItems: "center"
+  },
+  editButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
+  },
+  deleteButton: {
+    position: 'absolute',
+    display: 'flex',
+    alignItems: 'center',
+    right: theme.spacing(10),
+  }
+});
+
+
+const DialogTitle = withStyles(styles)((props) => {
+  const { children, classes, onClose, ...other } = props;
+  return (
+    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+      <Typography variant="h5">{children}</Typography>
+        <DeleteRecipe id={props.id} />
+        <IconButton className={classes.editButton}>
+          <Link to={{
+            pathname: "/update",
+            state: {
+              name: children
+            }
+          }}><EditIcon /> </Link>
+        </IconButton>
+    </MuiDialogTitle>
+  );
+});
 
 
 const useStyles = makeStyles({
@@ -53,7 +98,7 @@ const Recipe = props => {
                 Reseptiin
             </Button>
             <Dialog open={open} onClose={handleClose} fullWidth={true} maxWidth={'lg'}>
-                <DialogTitle>{props.props.name}</DialogTitle>
+                <DialogTitle id={props.props._id} >{props.props.name}</DialogTitle>
                 <DialogContentText>
                 <Divider />
                     <List>
