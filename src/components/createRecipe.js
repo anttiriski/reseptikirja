@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const createRecipe = props => {
-    return (
-        <div>
-            <p>{props.name}</p>
-        </div>
-    );
-}
+const createRecipe = (props) => {
+  return (
+    <div>
+      <p>{props.name}</p>
+    </div>
+  );
+};
 
 export default createRecipe;
