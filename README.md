@@ -25,4 +25,9 @@ Tavoitteenani oli oppia tekemään oma backend joka kommunikoi MongoDB kanssa.
 
 Loistavaa! Sait sähköisen reseptikirjasi toimimaan
 
-## Kuvia projektista löytyy Assets kansiosta
+## Kuvia projektista
+
+![Alt text](https://raw.githubusercontent.com/anttiriski/reseptikirja/master/Assets/etusivu.jpg "Etusivu")
+![Alt text](https://raw.githubusercontent.com/anttiriski/reseptikirja/master/Assets/haku_ominaisuus.jpg "Haku ominaisuus")
+![Alt text](https://raw.githubusercontent.com/anttiriski/reseptikirja/master/Assets/resepti.jpg "Resepti")
+![Alt text](https://raw.githubusercontent.com/anttiriski/reseptikirja/master/Assets/uusi_resepti.jpg "Uusi resepti")
